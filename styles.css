@@ -15,7 +15,7 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth;overflow-x: hidden; }
 
 body {
   font-family: 'Nunito', sans-serif;
@@ -60,7 +60,9 @@ body::after {
 
 /* ═══ NAV ═══ */
 nav {
-  position: sticky; top: 0; z-index: 200;
+  position: fixed; 
+  top: 0; left: 0; right: 0;
+  z-index: 200;
   display: flex; align-items: center; justify-content: space-between;
   padding: 0 2rem;
   height: var(--nav-h);
@@ -68,6 +70,7 @@ nav {
   backdrop-filter: blur(20px);
   border-bottom: 1.5px solid rgba(116,192,252,0.3);
   box-shadow: 0 2px 28px rgba(59,158,232,0.12);
+  position: fixed;
 }
 
 .nav-logo {
@@ -165,6 +168,7 @@ main { max-width: 1100px; margin: 0 auto; padding: 2.5rem 1.5rem 4rem; }
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1.8rem;
+  margin-top: 4rem;
   margin-bottom: 3rem;
   align-items: start;
 }
@@ -430,6 +434,10 @@ footer {
 
 /* ═══ RESPONSIVE — TABLET (≤860px) ═══ */
 @media (max-width: 860px) {
+    .nav {
+        position: sticky;
+        z-index: 100;
+    }
   .avatar-section {
     grid-template-columns: 1fr;
   }
@@ -449,6 +457,11 @@ footer {
   /* Show hamburger, hide desktop links */
   .hamburger { display: flex; }
 
+    .nav {
+        position: sticky;
+        z-index: 100;
+    }
+
   .nav-links {
     position: fixed;
     top: 0; right: -100%;
@@ -465,8 +478,17 @@ footer {
     z-index: 200;
     transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: -8px 0 40px rgba(59,158,232,0.15);
+    pointer-events: none;    
+    visibility: hidden;        
+    transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 0s linear 0.35s;
   }
-  .nav-links.open { right: 0; }
+    .nav-links.open { right: 0;
+    pointer-events: all;         /* ADD THIS */
+    visibility: visible;         /* ADD THIS */
+    transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 0s linear 0s; 
+    }
 
   .nav-links li { width: 100%; }
   .nav-links a {
@@ -482,6 +504,11 @@ footer {
 /* ═══ RESPONSIVE — MOBILE (≤600px) ═══ */
 @media (max-width: 600px) {
   main { padding: 1.5rem 1rem 3rem; }
+
+  .nav {
+        position: sticky;
+        z-index: 100;
+    }
 
   .section-title { font-size: 1.4rem; }
 
@@ -521,6 +548,11 @@ footer {
 
 /* ═══ RESPONSIVE — SMALL (≤380px) ═══ */
 @media (max-width: 380px) {
+    .nav {
+        position: sticky;
+        z-index: 100;
+    }
+    
   .nav-logo { font-size: 1.6rem; letter-spacing: 2px; }
 
   .tab-btn,
