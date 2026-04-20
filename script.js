@@ -153,7 +153,6 @@ function selectHobby(btn) {
 
   document.getElementById('hobbyBadgeIcon').textContent = data.icon;
   document.getElementById('hobbyTitle').textContent      = data.title;
-  document.getElementById('hobbyDesc').textContent       = data.desc;
   currentHobby = hobby;
 }
 
@@ -190,4 +189,29 @@ function selectEvent(btn) {
 document.addEventListener('DOMContentLoaded', () => {
   selectHobby(document.querySelector('.tab-btn[data-hobby="cooking"]'));
   selectEvent(document.querySelector('.event-tab-btn[data-event="birdwatching"]'));
+
+  const videos = document.querySelectorAll('video');
+
+        const options = {
+          root: null,
+          rootMargin: '-35% 0px -35% 0px',
+          threshold: 0.5
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+            const video = entry.target;
+            if (entry.isIntersecting) {
+              video.play();
+            } else {
+              video.pause();
+            }
+          });
+        }, options);
+
+        videos.forEach(video => {
+          observer.observe(video);
+        }); 
 });
+
+
