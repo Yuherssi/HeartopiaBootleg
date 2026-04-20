@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HEARTOPIA</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+<!-- ═══ NAV ═══ -->
+<nav>
+  <div class="nav-logo">
+    <p>HEARTOPIA</p>
+  </div>
+
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#hobbies" onclick="closeMenu()">Hobbies</a></li>
+    <li><a href="#map-events" onclick="closeMenu()">Map Events</a></li>
+    <li><a href="#about-me" onclick="closeMenu()">About Me</a></li>
+  </ul>
+
+  <button class="hamburger" id="hamburger" aria-label="Toggle menu" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <div class="nav-overlay" id="navOverlay" onclick="closeMenu()"></div>
+</nav>
+
+<!-- ═══ MAIN ═══ -->
+<main>
+
+  <!-- ── Avatar + Clothes ── -->
+  <div class="avatar-section">
+
+    <div class="avatar-display">
+      <div class="avatar-label">✦ My Avatar ✦</div>
+      <div class="avatar-frame" id="avatarFrame">
+        <img id="avatarImg" src="default/ava-default.png" alt="Avatar" />
+      </div>
+    </div>
+
+    <div class="clothes-panel">
+      <div class="clothes-title">Outfit Closet</div>
+
+      <div class="category-block">
+        <div class="category-label">👕 Shirts</div>
+        <div class="category-row">
+          <div class="clothes-item" data-type="shirt" data-index="1" onclick="selectPiece(this)">
+            <img src="icon/shirt1.png" alt="Shirt 1" /><div class="check">✓</div>
+          </div>
+          <div class="clothes-item" data-type="shirt" data-index="2" onclick="selectPiece(this)">
+            <img src="icon/short2.png" alt="Shirt 2" /><div class="check">✓</div>
+          </div>
+          <div class="clothes-item" data-type="shirt" data-index="3" onclick="selectPiece(this)">
+            <img src="icon/short3.png" alt="Shirt 3" /><div class="check">✓</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="category-block">
+        <div class="category-label">👖 Pants</div>
+        <div class="category-row">
+          <div class="clothes-item" data-type="pants" data-index="1" onclick="selectPiece(this)">
+            <img src="icon/pants1.png" alt="Pants 1" /><div class="check">✓</div>
+          </div>
+          <div class="clothes-item" data-type="pants" data-index="2" onclick="selectPiece(this)">
+            <img src="icon/pants2.png" alt="Pants 2" /><div class="check">✓</div>
+          </div>
+          <div class="clothes-item" data-type="pants" data-index="3" onclick="selectPiece(this)">
+            <img src="icon/pants3.png" alt="Pants 3" /><div class="check">✓</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="category-block">
+        <div class="category-label">👟 Shoes</div>
+        <div class="category-row">
+          <div class="clothes-item" data-type="shoes" data-index="1" onclick="selectPiece(this)">
+            <img src="icon/shoes1.png" alt="Shoes 1" /><div class="check">✓</div>
+          </div>
+          <div class="clothes-item" data-type="shoes" data-index="2" onclick="selectPiece(this)">
+            <img src="icon/shoes2.png" alt="Shoes 2" /><div class="check">✓</div>
+          </div>
+          <div class="clothes-item" data-type="shoes" data-index="3" onclick="selectPiece(this)">
+            <img src="icon/shoes3.png" alt="Shoes 3" /><div class="check">✓</div>
+          </div>
+        </div>
+      </div>
+
+      <button class="reset-btn" onclick="resetOutfit()">🔄 Reset Avatar</button>
+    </div>
+  </div>
+
+  <!-- ── Hobbies Section ── -->
+  <section class="hobbies-section" id="hobbies">
+    <div class="section-title">Hobbies</div>
+
+    <div class="hobbies-tabs" id="hobbyTabs">
+      <button class="tab-btn active" data-hobby="cooking"   onclick="selectHobby(this)">Cooking</button>
+      <button class="tab-btn"       data-hobby="gardening" onclick="selectHobby(this)">Gardening</button>
+      <button class="tab-btn"       data-hobby="birds"     onclick="selectHobby(this)">Bird Watching</button>
+      <button class="tab-btn"       data-hobby="insects"   onclick="selectHobby(this)">Insect Catching</button>
+      <button class="tab-btn"       data-hobby="fishing"   onclick="selectHobby(this)">Fishing</button>
+    </div>
+
+    <div class="video-player-card">
+      <div class="video-wrapper" id="videoWrapper">
+        <video id="vid-cooking"   src="hobbies/cooking.mp4"         controls autoplay muted playsinline loop></video>
+        <video id="vid-gardening" src="hobbies/gardening.mp4"       controls autoplay muted playsinline loop></video>
+        <video id="vid-birds"     src="hobbies/bird-watching.mp4"   controls autoplay muted playsinline loop></video>
+        <video id="vid-insects"   src="hobbies/insect-catching.mp4" controls autoplay muted playsinline loop></video>
+        <video id="vid-fishing"   src="hobbies/fishing.mp4"         controls autoplay muted playsinline loop></video>
+        <div class="video-placeholder" id="videoPlaceholder">
+          <div class="ph-emoji" id="placeholderEmoji">🍳</div>
+          <p id="placeholderText">Add your video to vid-cooking src=""</p>
+        </div>
+      </div>
+      <div class="video-info-bar">
+        <div class="hobby-icon-badge" id="hobbyBadgeIcon">🍳</div>
+        <div class="hobby-text">
+          <h3 id="hobbyTitle">Cooking</h3>
+          <p id="hobbyDesc">Baking, frying, and crafting delicious meals with love 🌸</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Map Events Section ── -->
+  <section class="events-section" id="map-events">
+    <div class="section-title">Map Events</div>
+
+    <div class="events-tabs" id="eventTabs">
+      <button class="event-tab-btn active" data-event="birdwatching" onclick="selectEvent(this)">Bird Watching</button>
+      <button class="event-tab-btn"        data-event="insect"       onclick="selectEvent(this)">Insect Catching</button>
+      <button class="event-tab-btn"        data-event="fishing"      onclick="selectEvent(this)">Fishing</button>
+    </div>
+
+    <div class="video-player-card">
+      <div class="video-wrapper" id="eventVideoWrapper">
+        <video id="evid-birdwatching" src="events/birdwatching-event.mp4" controls muted playsinline loop></video>
+        <video id="evid-insect"       src="events/insect-event.mp4"       controls muted playsinline loop></video>
+        <video id="evid-fishing"      src="events/fish-event.mp4"         controls muted playsinline loop></video>
+        <div class="video-placeholder" id="eventVideoPlaceholder">
+          <div class="ph-emoji" id="eventPlaceholderEmoji">🐦</div>
+          <p id="eventPlaceholderText">Add your video to evid-birdwatching src=""</p>
+        </div>
+      </div>
+      <div class="video-info-bar">
+        <div class="hobby-icon-badge" id="eventBadgeIcon">🐦</div>
+        <div class="hobby-text">
+          <h3 id="eventTitle">Bird Watching Event</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="footer-logo">
+    <div class="footer-logo-text">HATO</div>
+  </div>
+  <div class="footer-about">
+    <h4>✦ About Me ✦</h4>
+    <a href="portfolio/portfolio.html" id="about-me">My portfolio</a>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

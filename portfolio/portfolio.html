@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jaser G. Abdulkarim | Portfolio</title>
+  <link rel="stylesheet" href="portfolio.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="navigation-bar" id="navbar">
+    <div class="nav-logo">JASER</div>
+
+    <!-- Desktop links -->
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <!-- Hamburger (mobile only) -->
+    <button class="hamburger" id="hamburger" aria-label="Open menu" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+
+    <!-- Dropdown that slides under the nav bar -->
+    <div class="mobile-dropdown" id="mobileDropdown">
+      <ul>
+        <li><a href="#skills"   onclick="closeMenu()">Skills</a></li>
+        <li><a href="#projects" onclick="closeMenu()">Projects</a></li>
+        <li><a href="#contact"  onclick="closeMenu()">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <div class="profile-pic-container">
+        <img src="../profilepic/profilePic.jpg" alt="Jaser G. Abdulkarim" class="profile-pic" />
+      </div>
+      <div class="hero-text">
+        <h1>JASER G. ABDULKARIM</h1>
+        <p class="bio">
+          I am a Software Developer with a passion for creating innovative
+          solutions. With a strong background in web development and a keen
+          eye for design, I strive to build user-friendly applications that
+          make a positive impact. Always eager to learn new technologies and
+          collaborate on exciting projects.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="section" id="skills">
+    <h2>Tech Stack</h2>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <img src="../techstack/html.png" alt="HTML" class="textstack-img" />
+        <p>HTML</p>
+      </div>
+      <div class="skill-card">
+        <img src="../techstack/text.png" alt="CSS" class="textstack-img" />
+        <p>CSS</p>
+      </div>
+      <div class="skill-card">
+        <img src="../techstack/js.png" alt="JavaScript" class="textstack-img" />
+        <p>JAVASCRIPT</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="section" id="projects">
+    <h2>Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <div class="project-status ongoing">Ongoing</div>
+        <h3>Project One</h3>
+        <p>A brief description of your ongoing project goes here. Add more details later.</p>
+        <a href="#" class="btn">View Project →</a>
+      </div>
+      <div class="project-card">
+        <h3>Project Two</h3>
+        <p>Placeholder for your second project. Replace this text and image when ready.</p>
+        <a href="#" class="btn">View Project →</a>
+      </div>
+      <div class="project-card">
+        <h3>Project Three</h3>
+        <p>Placeholder for your third project. Replace this text and image when ready.</p>
+        <a href="#" class="btn">View Project →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER / CONTACT -->
+  <footer id="contact">
+    <div class="footer-inner">
+      <h2>Contact Me</h2>
+
+      <div class="contact-icons-row">
+
+        <!-- Gmail compose — opens gmail.com with To, CC, subject pre-filled -->
+        <a href="https://mail.google.com/mail/?view=cm&to=jgabdulkarim@sscgi.com&cc=jgabdulkarim@sscgi.com&su=Hello%20Jaser&body=Hi%20Jaser%2C%0A%0A"
+           target="_blank" rel="noopener noreferrer"
+           class="contact-icon-btn"
+           title="Send via Gmail">
+          <div class="icon-circle gmail">
+            <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+              <path fill="#EA4335" d="M6 40V16l18 13L42 16v24z"/>
+              <path fill="#FBBC05" d="M6 16l18 13 18-13V14H6z"/>
+              <path fill="#34A853" d="M42 40H6a2 2 0 0 1-2-2V14l20 14.5L44 14v24a2 2 0 0 1-2 2z"/>
+              <path fill="#4285F4" d="M6 14h36L24 28z"/>
+              <path fill="#EA4335" d="M4 14a2 2 0 0 1 2-2h36a2 2 0 0 1 2 2v2L24 29 4 16z"/>
+            </svg>
+          </div>
+          <span class="icon-label">Gmail</span>
+        </a>
+
+        <!-- GitHub -->
+        <a href="https://github.com/Yuherssi"
+           target="_blank" rel="noopener noreferrer"
+           class="contact-icon-btn"
+           title="GitHub — Yuherssi">
+          <div class="icon-circle github">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2Z"/>
+            </svg>
+          </div>
+          <span class="icon-label">GitHub</span>
+        </a>
+
+      </div><!-- /contact-icons-row -->
+
+      <div class="footer-bottom">
+        <span>© 2025 Jaser G. Abdulkarim</span>
+        <a href="../index.html">Back to Heartopia</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="portfolio.js"></script>
+
+</body>
+</html>
