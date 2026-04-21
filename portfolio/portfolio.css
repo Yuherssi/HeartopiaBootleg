@@ -2,7 +2,7 @@
    RESET & BASE
 ═══════════════════════════════════════ */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden;}
 
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -86,8 +86,7 @@ body {
   background: #ffb090;
   overflow: hidden;
   max-height: 0;
-  transition: max-height 0.35s cubic-bezier(0.4,0,0.2,1),
-              box-shadow 0.35s;
+  transition: max-height 0.35s cubic-bezier(0.4,0,0.2,1), box-shadow 0.35s;
   z-index: 999;
 }
 .mobile-dropdown.open {
