@@ -1,3 +1,20 @@
+const downloadBtn = document.getElementById("download-btn");
+const dropdownContent = document.querySelector(".dropdown-content");
+
+downloadBtn.addEventListener("click", (e) => {
+  e.stopPropagation();
+  const isVisible = dropdownContent.style.display === "block";
+  dropdownContent.style.display = isVisible ? "none" : "block";
+});
+
+// Close dropdown when clicking anywhere else
+document.addEventListener("click", (e) => {
+  if (!downloadBtn.contains(e.target)) {
+    dropdownContent.style.display = "none";
+  }
+});
+
+
 /* ═══ HOBBIES DATA ═══ */
 const hobbiesData = {
   cooking:   { icon: '🍳', title: 'Cooking'},

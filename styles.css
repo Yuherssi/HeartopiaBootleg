@@ -100,7 +100,7 @@ nav {
   gap: 24px;
   align-items: center;
 }
-.nav-links a {
+.nav-links a, .nav-links button{
   text-decoration: none;
   font-family: 'Fredoka One', cursive;
   font-size: 1rem;
@@ -110,7 +110,22 @@ nav {
   background-clip: text;
   transition: opacity 0.2s;
 }
-.nav-links a:hover { opacity: 0.7; }
+
+.download-btn {border: none;}
+.dropdown-content {
+  background-color: white;
+  display: none;
+  position: absolute;
+  top: 60px;
+  right: 316px;
+  padding: 10px;
+  border-radius: 10px;
+  line-height: 30px;
+  box-shadow: 0 4px 16px rgba(59,158,232,0.18);
+  z-index: 300;
+}
+.dropdown-downloads {list-style: none; display: block;}
+.nav-links a:hover, .download-btn:hover { opacity: 0.7; }
 
 
 /* Hamburger button */
@@ -534,7 +549,7 @@ footer {
     }
 
   .nav-links li { width: 100%; }
-  .nav-links a {
+  .nav-links a, .nav-links button {
     display: block;
     font-size: 1.3rem;
     padding: 12px 0;
@@ -542,6 +557,24 @@ footer {
     -webkit-text-fill-color: transparent;
   }
   .nav-links li:last-child a { border-bottom: none; }
+
+  .dropdown-content {
+    position: static;
+    top: unset;
+    right: unset;
+    box-shadow: none;
+    padding: 0 0 0 1rem;
+    border-radius: 0;
+    border-left: 2px solid rgba(116,192,252,0.3);
+  }
+
+  .dropdown-content a {
+    -webkit-text-fill-color: var(--dark);
+    color: var(--dark);
+    font-size: 1rem;
+    border-bottom: none;
+    padding: 6px 0;
+  }
 }
 
 

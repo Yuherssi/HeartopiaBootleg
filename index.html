@@ -6,7 +6,7 @@
     <title>HEARTOPIA</title>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="styles.css"/>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
   </head>
   <body>
 
@@ -17,10 +17,17 @@
     </div>
 
     <ul class="nav-links" id="navLinks">
-      <li><a href="#about-me" onclick="closeMenu()">Download</a></li>
+      <li><button class="download-btn" id="download-btn">Download</button>
+        <div class="dropdown-content">
+        <ul class="dropdown-downloads">
+          <li><a href="https://d.tap.io/pc/latest/coop-pc?jid=id231364">For PC</a></li>
+          <li><a href="https://play.google.com/store/apps/details?id=com.xd.xdtglobal.gp">For Android</a></li>
+        </ul>
+        </div>
+      </li>
       <li><a href="#hobbies" onclick="closeMenu()">Hobbies</a></li>
       <li><a href="#map-events" onclick="closeMenu()">Map Events</a></li>
-      <li><a href="#https://play.google.com/store/apps/details?id=com.xd.xdtglobal.gp" onclick="closeMenu()">About Me</a></li>
+      <li><a href="#about-me" onclick="closeMenu()">About Me</a></li>
     </ul>
 
     <button class="hamburger" id="hamburger" aria-label="Toggle menu" onclick="toggleMenu()">
@@ -170,8 +177,8 @@
       <div class="footer-logo-text">HATO</div>
     </div>
     <div class="footer-about">
-      <h4>About Me</h4>
-      <a href="portfolio/portfolio.html" id="about-me">My portfolio</a>
+      <h4>MY PORTFOLIO</h4>
+      <a href="portfolio/portfolio.html" id="about-me">Click here</a>
     </div>
   </footer>
   </body>
