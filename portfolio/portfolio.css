@@ -328,11 +328,9 @@ body {
 /* footer */
 footer {
   background: linear-gradient(135deg, #ffe4c4 0%, #ffd6aa 100%);
-  padding: clamp(48px, 8vw, 96px) clamp(16px, 5vw, 60px) clamp(28px, 4vw, 48px);
 }
 
 .footer-inner {
-  max-width: 680px;
   margin: 0 auto;
   text-align: center;
 }
@@ -391,13 +389,14 @@ footer h2 {
 .footer-bottom {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content:flex-start;
   flex-wrap: wrap;
   gap: 10px;
   padding-top: clamp(16px, 2.5vw, 26px);
   border-top: 1px solid rgba(0, 0, 0, 0.351);
   font-size: clamp(0.74rem, 1.1vw, 0.86rem);
   color: rgba(0,0,0, 0.7);
+  width: 100%;
 }
 .footer-bottom a { text-decoration: none; color: rgba(0,0,0, 0.7);}
 .footer-bottom a, .footer-bottom span {font-weight: 500;}
