@@ -13,7 +13,7 @@
   --nav-h:     68px;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
 html { scroll-behavior: smooth;overflow-x: hidden; }
 
@@ -68,17 +68,18 @@ nav {
   justify-content: space-between;
   padding: 0 2rem;
   height: var(--nav-h);
-  background: rgba(255,255,255,0.55);
-  backdrop-filter: blur(20px);
+  background: rgba(255,255,255);
+  /* backdrop-filter: blur(50px); */
   border-bottom: 1.5px solid rgba(116,192,252,0.3);
   box-shadow: 0 2px 28px rgba(59,158,232,0.12);
   position: fixed;
+  border-radius: 0 0 28px 28px;
 }
 
 .nav-logo {
   font-family: 'Fredoka One', cursive;
   font-size: 2.1rem;
-  letter-spacing: 4px;
+  letter-spacing: 2px;
   background: linear-gradient(135deg, #3B9EE8, #74C0FC, #C77DFF);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -87,6 +88,8 @@ nav {
   /* animation: logoFloat 3.5s ease-in-out infinite; */
   flex-shrink: 0;
 }
+.nav-logo a {text-decoration: none;}
+
 /* @keyframes logoFloat {
   0%,100% { transform: translateY(0); }
   50%      { transform: translateY(-4px); }
@@ -117,7 +120,7 @@ nav {
   display: none;
   position: absolute;
   top: 60px;
-  right: 316px;
+  right: 360px;
   padding: 10px;
   border-radius: 10px;
   line-height: 30px;
@@ -125,7 +128,8 @@ nav {
   z-index: 300;
 }
 .dropdown-downloads {list-style: none; display: block;}
-.nav-links a:hover, .download-btn:hover { opacity: 0.7; }
+.dropdown-downloads li:hover {opacity: 0.7; cursor: pointer;}
+.nav-links a:hover, .download-btn:hover { opacity: 0.7; cursor: pointer; text-decoration: underline;}
 
 
 /* Hamburger button */
@@ -243,6 +247,7 @@ iframe {
 }
 .avatar-frame {
   width: 100%;
+  height: 567px;
   max-width: 320px;
   aspect-ratio: 7/10;
   border-radius: 20px;
@@ -319,7 +324,7 @@ iframe {
 .clothes-item.active .check { display: flex; }
 
 .reset-btn {
-  width: 100%;
+  width: 70%;
   margin-top: 0.5rem;
   padding: 10px 0;
   background: linear-gradient(135deg, #d0eaff, #ddd0ff);
@@ -330,6 +335,7 @@ iframe {
   color: var(--dark);
   cursor: pointer;
   transition: all 0.22s ease;
+  margin-top: 30px;
 }
 .reset-btn:hover {
   background: linear-gradient(135deg, #b8dcff, #c8b8ff);
@@ -444,8 +450,8 @@ footer {
   background: linear-gradient(135deg, #0C2A45 0%, #143d5e 100%);
   color: #a8d4f0;
   border-radius: 28px 28px 0 0;
-  padding: 2.2rem 2.5rem;
-  display: flex; align-items: center; justify-content: space-between;
+  padding: 2.2rem 4.5rem;
+  display: flex; align-items: center; justify-content: center;
   gap: 2rem;
   margin-top: 1rem;
 }
@@ -454,7 +460,7 @@ footer {
 }
 .footer-logo-text {
   font-family: 'Fredoka One', cursive;
-  font-size: 1.6rem; letter-spacing: 2px;
+  font-size: 1.6rem; letter-spacing: 3px;
   background: linear-gradient(90deg, var(--sky), var(--lavender));
   -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
 }
@@ -481,12 +487,14 @@ footer {
 }
 
 
-/* ═══ RESPONSIVE — TABLET (≤860px) ═══ */
+/* ═══ RESPONSIVE — TABLET (≤860px) ═══ */ 
 @media (max-width: 860px) {
     .nav {
         position: sticky;
         z-index: 100;
     }
+
+    .download-btn {width: 100%; text-align: start;}
 
     .preview {
       width: 100%;
@@ -502,6 +510,7 @@ footer {
   .clothes-panel {
     width: 100%;
   }
+  .footer-logo-text {font-size: 1rem;}
 }
 
 
@@ -569,8 +578,6 @@ footer {
   }
 
   .dropdown-content a {
-    -webkit-text-fill-color: var(--dark);
-    color: var(--dark);
     font-size: 1rem;
     border-bottom: none;
     padding: 6px 0;
@@ -641,4 +648,5 @@ footer {
   .event-tab-btn { font-size: 0.7rem; padding: 5px 10px; }
 
   .clothes-panel { padding: 1.2rem; }
+  .footer-logo-text {font-size: 0.8rem;}
 }

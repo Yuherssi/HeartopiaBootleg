@@ -343,12 +343,6 @@ footer h2 {
   margin-bottom: clamp(8px, 1.2vw, 14px);
 }
 
-.contact-sub {
-  font-size: clamp(0.86rem, 1.4vw, 1.02rem);
-  color: #666;
-  margin-bottom: clamp(32px, 4.5vw, 52px);
-}
-
 .contact-icons-row {
   display: flex;
   flex-wrap: wrap;
@@ -401,12 +395,12 @@ footer h2 {
   flex-wrap: wrap;
   gap: 10px;
   padding-top: clamp(16px, 2.5vw, 26px);
-  border-top: 1px solid rgba(0,0,0,0.1);
+  border-top: 1px solid rgba(0, 0, 0, 0.351);
   font-size: clamp(0.74rem, 1.1vw, 0.86rem);
-  color: #888;
+  color: rgba(0,0,0, 0.7);
 }
-.footer-bottom a { text-decoration: none; color: #888; }
-.back-link { color: #888; text-decoration: none; transition: color 0.2s; }
+.footer-bottom a { text-decoration: none; color: rgba(0,0,0, 0.7);}
+.footer-bottom a, .footer-bottom span {font-weight: 500;}
 .back-link:hover { color: #ff8a6b; }
 
 
