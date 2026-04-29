@@ -30,6 +30,7 @@ body {
   color: #333;
   letter-spacing: 1px;
   flex-shrink: 0;
+  text-decoration: none;
 }
 
 /* ── Desktop links ── */
@@ -332,6 +333,7 @@ footer {
 
 .footer-inner {
   margin: 0 auto;
+  padding-top: 20px;
   text-align: center;
 }
 
@@ -389,17 +391,16 @@ footer h2 {
 .footer-bottom {
   display: flex;
   align-items: center;
-  justify-content:flex-start;
+  justify-content: space-between;
   flex-wrap: wrap;
-  gap: 10px;
-  padding-top: clamp(16px, 2.5vw, 26px);
-  border-top: 1px solid rgba(0, 0, 0, 0.351);
+  /* padding-top: clamp(16px, 2.5vw, 26px); */
+  border-top: 1px solid rgba(0, 0, 0, 0.200);
   font-size: clamp(0.74rem, 1.1vw, 0.86rem);
-  color: rgba(0,0,0, 0.7);
+  color: rgba(0,0,0, 0.5);
   width: 100%;
 }
-.footer-bottom a { text-decoration: none; color: rgba(0,0,0, 0.7);}
-.footer-bottom a, .footer-bottom span {font-weight: 500;}
+.footer-bottom a { text-decoration: none; color: rgba(0,0,0, 0.5);}
+.footer-bottom a, .footer-bottom span {font-weight: 500; padding: 10px 30px;}
 .back-link:hover { color: #ff8a6b; }
 
 
@@ -453,7 +454,7 @@ footer h2 {
  
   /* Footer */
   footer {
-    padding: 48px 24px 32px;
+    padding: 10px 24px 8px;
   }
   .footer-inner {
     width: 100%;
@@ -488,8 +489,9 @@ footer h2 {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: 6px;
   }
+  .footer-bottom a, .footer-bottom span {
+    padding: 6px 20px;
 }
  
 
@@ -505,7 +507,7 @@ footer h2 {
   }
  
   footer {
-    padding: 40px 20px 28px;
+    padding: 10px 20px 8px;
   }
   .contact-icons-row {
     gap: 28px;
@@ -540,4 +542,4 @@ footer h2 {
     min-height: 52px;
   }
 }
- 
+}
