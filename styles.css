@@ -237,6 +237,11 @@ iframe {
   height: 90%;
   position: relative;
   overflow: hidden;
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  isolation: isolate;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
 }
 .avatar-display::before {
   content: '';
@@ -276,11 +281,16 @@ iframe {
   background: var(--card);
   border-radius: 28px;
   box-shadow: var(--shadow);
+  -webkit-backdrop-filter: blur(12px); /* ADD THIS */
   backdrop-filter: blur(12px);
   border: 1.5px solid rgba(255,255,255,0.85);
   padding: 1.8rem;
   width: 100%;
+  isolation: isolate; /* ADD THIS — prevents backdrop-filter from eating children */
+  -webkit-transform: translateZ(0); /* ADD THIS — forces its own compositing layer */
+  transform: translateZ(0);
 }
+
 .clothes-title {
   font-family: 'Fredoka One', cursive;
   font-size: 1.15rem; color: var(--dark);
@@ -293,23 +303,38 @@ iframe {
   color: var(--sky-deep);
   margin-bottom: 0.55rem;
 }
-.category-row { display: flex; gap: 0.7rem; }
+.category-row { display: flex; gap: 0.7rem; align-items: stretch;}
 .clothes-item {
   flex: 1;
-  aspect-ratio: 1;
+  /* Replace aspect-ratio with this iOS-safe version */
+  aspect-ratio: 1 / 1;
+  min-width: 0;
+  min-height: 60px; /* fallback if aspect-ratio fails */
   border-radius: 14px;
   background: linear-gradient(145deg, #e8f6ff 0%, #ede0ff 100%);
   border: 2px solid transparent;
   cursor: pointer;
   overflow: hidden;
-  display: flex; align-items: center; justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: all 0.25s ease;
   position: relative;
+  -webkit-transform: translateZ(0); /* force GPU layer — fixes iOS rendering bug */
+  transform: translateZ(0);
 }
+
 .clothes-item img {
-  width: 100%; height: 100%; object-fit: cover;
+  width: 100%;
+  height: 100%;
+  display: block; /* removes inline-block gap bug */
+  object-fit: cover;
+  -webkit-object-fit: cover;
   transition: transform 0.3s;
+  -webkit-transform: translateZ(0); /* prevent iOS from dropping the layer */
+  transform: translateZ(0);
 }
+
 .clothes-item:hover {
   border-color: var(--sky);
   transform: translateY(-3px);
